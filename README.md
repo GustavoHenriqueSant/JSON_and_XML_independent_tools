@@ -41,7 +41,7 @@ O processo de exportação apresenta duas opções ao usuário, exportar a anál
 
 Após o usuário indicar sua escolha é realizado o download da análise no formato escolhido.
 
-![Imagem4](https://user-images.githubusercontent.com/71770334/162837691-05a0246d-c35d-498a-9ef1-348ec5fd1113.PNG)
+![Imagem4](https://user-images.githubusercontent.com/71770334/162845656-811ca8a4-7f4b-459c-975d-45c0e69bf48a.PNG)
 
 # Ferramentas independentes 
 
@@ -73,7 +73,7 @@ Para a ferramenta idependente utilizamos as API's JAXB e GSON na linguagem de pr
 </dependency>
 ```
 
-E, a API GSON pode ser atribuído a um projeto maven adicionando a seguinte dependência:
+E, a API GSON pode ser atribuída a um projeto maven adicionando a seguinte dependência:
 
 ```xml
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
