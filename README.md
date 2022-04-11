@@ -37,7 +37,7 @@ Utilizando o esquema correspondente, XSD para documentos XML ou JSON Schema para
 
 O processo de exportação apresenta duas opções ao usuário, exportar a análise em formato JSON ou XML.
 
-![Imagem3](https://user-images.githubusercontent.com/71770334/162837599-5cf3c8a9-b39d-4e45-9c77-8260793e9331.png)
+![Imagem3](https://user-images.githubusercontent.com/71770334/162841446-9dc37af4-4347-47ad-9136-e2107cd10abe.png)
 
 Após o usuário indicar sua escolha é realizado o download da análise no formato escolhido.
 
