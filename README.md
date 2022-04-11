@@ -27,11 +27,11 @@ Utilizando dos esquemas JSON e XML produzidos neste trabalho, implementamos as f
 
 Para o processo de importação o usuário realiza o upload da análise em formato JSON ou XML.
 
-![Imagem1](https://user-images.githubusercontent.com/71770334/162840990-263d2728-9e77-46c6-90b0-af7e44be2c91.PNG)
+![Imagem1](https://user-images.githubusercontent.com/71770334/162844244-ac6904fa-ed77-4d97-8962-db534638762e.PNG)
 
 Utilizando o esquema correspondente, XSD para documentos XML ou JSON Schema para documentos JSON, a análise a ser importada é validada. Uma vez compatível com nosso esquema, os dados presentes na análise são persistidos no banco de dados da WebSTAMP, criando-se um novo projeto na ferramenta.
 
-![Imagem2](https://user-images.githubusercontent.com/71770334/162837492-18f3c438-ccad-4803-822c-c45969a71eab.PNG)
+![Imagem2](https://user-images.githubusercontent.com/71770334/162844100-003478bf-97a5-427e-8a41-c56eebfb5320.PNG)
 
 ### Exportação de análises:
 
