@@ -45,7 +45,7 @@ Após o usuário indicar sua escolha é realizado o download da análise no form
 
 # Ferramentas independentes 
 
-Para o teste de portabilidade entra análises de *hazards* no formato de documentos XML utilizamos a API JAXB para a linguagem Java. A API pode ser atribuído em um projeto maven com as seguintes dependências:
+Para a ferramenta idependente utilizamos as API's JAXB e GSON na linguagem de programação Java. A API JAXB para testar a importação e exportação utilizando o XSD e GSON para testar a importação e exportação utilizando JSON Schema. A API JAXB pode ser atribuída a um projeto maven adicionando as seguintes dependências:
 
 ```xml
 <dependency>
@@ -73,7 +73,7 @@ Para o teste de portabilidade entra análises de *hazards* no formato de documen
 </dependency>
 ```
 
-Já para os testes de portabilidade das análises de *hazards* em formato JSON utilizamos a API GSON para a linguagem java. A API pode ser atribuído a um projeto maven com a seguinte dependência:
+E, a API GSON pode ser atribuído a um projeto maven adicionando a seguinte dependência:
 
 ```xml
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
