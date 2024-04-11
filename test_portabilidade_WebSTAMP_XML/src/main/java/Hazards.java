@@ -3,8 +3,10 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "hazard")
+@XmlType(propOrder = {"id", "name", "description", "project_id", "created_at", "updated_at", "losseshazards_relations"})
 public class Hazards {
     private int id;
     private String name;
@@ -62,13 +64,13 @@ public class Hazards {
         this.updated_at = updated_at;
     }
 
-    public List<Losseshazards_relation> getLosseshazards() {
+    public List<Losseshazards_relation> getLosseshazards_relations() {
         return losseshazards_relations;
     }
 
     @XmlElementWrapper(name = "losseshazards_relations")
     @XmlElement(name = "losseshazards_relation")
-    public void setLosseshazards(List<Losseshazards_relation> losseshazards) {
+    public void setLosseshazards_relations(List<Losseshazards_relation> losseshazards) {
         this.losseshazards_relations = losseshazards;
     }
 

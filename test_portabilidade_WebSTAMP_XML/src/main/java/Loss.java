@@ -3,6 +3,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "loss")
+@XmlType(propOrder = {"id", "name", "description", "project_id", "created_at", "updated_at"})
 public class Loss {
     private int id;
     private String name;

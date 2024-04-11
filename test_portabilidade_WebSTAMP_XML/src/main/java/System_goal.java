@@ -3,6 +3,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "system_goal")
+@XmlType(propOrder = {"id", "name", "description", "project_id", "created_at", "updated_at"})
 public class System_goal {
     private int id;
     private String name;
@@ -11,6 +12,19 @@ public class System_goal {
     private String created_at;
     private String updated_at;
 
+    public System_goal(int id, String name, String description, int project_id, String created_at, String updated_at) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.project_id = project_id;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+    }
+    
+    public System_goal(){
+        
+    }
+    
     public int getId() {
         return id;
     }

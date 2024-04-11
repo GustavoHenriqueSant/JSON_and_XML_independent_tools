@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @XmlRootElement(name = "system_safety_constraint")
+@XmlType(propOrder = {"id", "name", "description", "project_id", "created_at", "updated_at", "system_safety_constraint_hazards_relations"})
 public class System_safety_constraint {
     private int id;
     private String name;
@@ -63,13 +64,13 @@ public class System_safety_constraint {
         this.updated_at = updated_at;
     }
 
-    public List<System_safety_constraint_hazards_relation> getSystem_safety_constraint_hazards() {
+    public List<System_safety_constraint_hazards_relation> getSystem_safety_constraint_hazards_relations() {
         return system_safety_constraint_hazards_relations;
     }
 
     @XmlElementWrapper(name = "system_safety_constraint_hazards_relations")
     @XmlElement(name = "system_safety_constraint_hazards_relation")
-    public void setSystem_safety_constraint_hazards(List<System_safety_constraint_hazards_relation> system_safety_constraint_hazards) {
+    public void setSystem_safety_constraint_hazards_relations(List<System_safety_constraint_hazards_relation> system_safety_constraint_hazards) {
         this.system_safety_constraint_hazards_relations = system_safety_constraint_hazards;
     }
 

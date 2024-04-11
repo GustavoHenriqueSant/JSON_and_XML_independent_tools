@@ -3,6 +3,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "connection")
+@XmlType(propOrder = {"id", "output_component_id", "type_output", "input_component_id", "type_input", "created_at", "updated_at"})
 public class Connection {
     private int id;
     private int output_component_id;

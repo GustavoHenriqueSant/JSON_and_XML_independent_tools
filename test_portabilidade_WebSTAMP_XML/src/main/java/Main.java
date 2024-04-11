@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 public class Main {
@@ -14,10 +15,16 @@ public class Main {
     public static void main(String[] args) {
         try{
             JAXBContext jaxbContext = JAXBContext.newInstance(Project.class);
-
+            Marshaller marshaller = jaxbContext.createMarshaller();
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            Project que= (Project) jaxbUnmarshaller.unmarshal(new InputStreamReader(new FileInputStream("C:\\Users\\Gustavo\\IdeaProjects\\test_portabilidade_WebSTAMP_XML\\src\\main\\java\\testeII.xml"), StandardCharsets.UTF_8));
-
+            Project que= (Project) jaxbUnmarshaller.unmarshal(new InputStreamReader(new FileInputStream(System.getProperty("user.dir") + "\\assets\\TrainDoorSystem.xml"), StandardCharsets.UTF_8));
+            
+            que.setName("ATT Train Door System Import XML");
+            System_goal newgoal = new System_goal(999, "Test", "Test description", 1, "2021-09-21 17:27:12", "2021-09-21 17:27:12");
+            que.getSystem_goal().add(newgoal);
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true); // Formata a saída XML
+            marshaller.marshal(que, new File(System.getProperty("user.dir") + "\\assets\\ATTrainDoorSystem.xml"));
+            
             for(int i = 0; i < que.getActuators().size(); i++){
                 System.out.println("Actuator " + Integer.toString(i) + ":");
                 System.out.println("\t id: " + que.getActuators().get(i).getId());
@@ -33,6 +40,8 @@ public class Main {
                 System.out.println("\t name: " + que.getAssumption().get(i).getName());
                 System.out.println("\t description " + que.getAssumption().get(i).getDescription());
                 System.out.println("\t project_id : " + que.getAssumption().get(i).getProject_id());
+                System.out.println("\t created_at: " + que.getAssumption().get(i).getCreated_at());
+                System.out.println("\t updated_at: " + que.getAssumption().get(i).getUpdated_at());
             }
 
             System.out.println();
@@ -64,9 +73,9 @@ public class Main {
                         System.out.println("\t\t\t contronlacton_id " + que.getController().get(i).getControlaction().get(j).getRule().get(k).getControlaction_id());
                         System.out.println("\t\t\t column " + que.getController().get(i).getControlaction().get(j).getRule().get(k).getColumn());
                         System.out.println("\t\t\t varialbe_state_reltion ");
-                        System.out.println("\t\t\t\t rule_id: " + que.getController().get(i).getControlaction().get(j).getRule().get(k).getVariableState().getRule_id());
-                        System.out.println("\t\t\t\t varialbe_id: " + que.getController().get(i).getControlaction().get(j).getRule().get(k).getVariableState().getVariable_id());
-                        System.out.println("\t\t\t\t state_id: " + que.getController().get(i).getControlaction().get(j).getRule().get(k).getVariableState().getState_id());
+                        System.out.println("\t\t\t\t rule_id: " + que.getController().get(i).getControlaction().get(j).getRule().get(k).getVariable_state_relations().getRule_id());
+                        System.out.println("\t\t\t\t varialbe_id: " + que.getController().get(i).getControlaction().get(j).getRule().get(k).getVariable_state_relations().getVariable_id());
+                        System.out.println("\t\t\t\t state_id: " + que.getController().get(i).getControlaction().get(j).getRule().get(k).getVariable_state_relations().getState_id());
                     }
 
                     for(int k = 0; k < que.getController().get(i).getControlaction().get(j).getContext_table().size(); k++){
@@ -137,10 +146,10 @@ public class Main {
                 System.out.println("Hazard " + i);
                 System.out.println("\tnome: " + que.getHazards().get(i).getName());
                 System.out.println("\tDescription: " + que.getHazards().get(i).getDescription());
-                for(int j = 0; j < que.getHazards().get(i).getLosseshazards().size(); j++){
+                for(int j = 0; j < que.getHazards().get(i).getLosseshazards_relations().size(); j++){
                     System.out.println("\tLosses Hazards Relations " + j);
-                    System.out.println("\t\tloss_id: " + que.getHazards().get(i).getLosseshazards().get(j).getLoss_id());
-                    System.out.println("\t\tHazard_id: " + que.getHazards().get(i).getLosseshazards().get(j).getHazard_id());
+                    System.out.println("\t\tloss_id: " + que.getHazards().get(i).getLosseshazards_relations().get(j).getLoss_id());
+                    System.out.println("\t\tHazard_id: " + que.getHazards().get(i).getLosseshazards_relations().get(j).getHazard_id());
                 }
             }
 
@@ -173,11 +182,11 @@ public class Main {
                 System.out.println("System safety constraint " + i);
                 System.out.println("\tname: " + que.getSystem_safety_constraint().get(i).getName());
                 System.out.println("\tdescription: " + que.getSystem_safety_constraint().get(i).getDescription());
-                for(int j = 0; j < que.getSystem_safety_constraint().get(i).getSystem_safety_constraint_hazards().size(); j++){
+                for(int j = 0; j < que.getSystem_safety_constraint().get(i).getSystem_safety_constraint_hazards_relations().size(); j++){
                     System.out.println("\tSystem safety constraint" + j);
-                    System.out.println("\t\trule_id: " + que.getSystem_safety_constraint().get(i).getSystem_safety_constraint_hazards().get(j).getCreated_at());
-                    System.out.println("\t\tsc_id: " + que.getSystem_safety_constraint().get(i).getSystem_safety_constraint_hazards().get(j).getSsc_id());
-                    System.out.println("\t\thazards_id: " + que.getSystem_safety_constraint().get(i).getSystem_safety_constraint_hazards().get(j).getHazard_id());
+                    System.out.println("\t\trule_id: " + que.getSystem_safety_constraint().get(i).getSystem_safety_constraint_hazards_relations().get(j).getCreated_at());
+                    System.out.println("\t\tsc_id: " + que.getSystem_safety_constraint().get(i).getSystem_safety_constraint_hazards_relations().get(j).getSsc_id());
+                    System.out.println("\t\thazards_id: " + que.getSystem_safety_constraint().get(i).getSystem_safety_constraint_hazards_relations().get(j).getHazard_id());
                 }
             }
 

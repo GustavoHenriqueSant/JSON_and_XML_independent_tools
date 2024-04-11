@@ -3,6 +3,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "system_safety_constraint_hazards_relation")
+@XmlType(propOrder = {"ssc_id", "hazard_id", "created_at", "updated_at"})
 public class System_safety_constraint_hazards_relation {
     private int ssc_id;
     private int hazard_id;

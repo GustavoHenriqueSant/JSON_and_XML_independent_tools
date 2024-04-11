@@ -3,6 +3,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "rule")
+@XmlType(propOrder = {"id", "controlaction_id", "column", "created_at", "updated_at", "variable_state_relations"})
 public class Rule {
     private int id;
     private int controlaction_id;
@@ -51,13 +52,13 @@ public class Rule {
         this.updated_at = updated_at;
     }
 
-    public Variable_state_relation getVariableState() {
+    public Variable_state_relation getVariable_state_relations() {
         return variable_state_relations;
     }
 
     @XmlElement(name = "variable_state_relations")
-    public void setVariableState(Variable_state_relation variableState) {
-        this.variable_state_relations = variableState;
+    public void setVariable_state_relations(Variable_state_relation variable_state_relations) {
+        this.variable_state_relations = variable_state_relations;
     }
 
 }

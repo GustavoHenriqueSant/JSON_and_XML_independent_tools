@@ -3,6 +3,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "variable_state_relations")
+@XmlType(propOrder = {"rule_id", "variable_id", "state_id", "created_at", "updated_at"})
 public class Variable_state_relation {
     private int rule_id;
     private int variable_id;

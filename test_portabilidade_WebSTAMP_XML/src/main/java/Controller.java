@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @XmlRootElement(name = "controller")
+@XmlType(propOrder = {"id", "name", "type", "project_id", "created_at", "updated_at", "controlaction", "variable"})
 public class Controller {
     private int id;
     private String name;
@@ -68,8 +69,8 @@ public class Controller {
         return controlaction;
     }
 
-    @XmlElementWrapper(name = "controlacitons")
-    @XmlElement(name = "controlaciton")
+    @XmlElementWrapper(name = "controlactions")
+    @XmlElement(name = "controlaction")
     public void setControlaction(List<Controlaction> controlaction) {
         this.controlaction = controlaction;
     }

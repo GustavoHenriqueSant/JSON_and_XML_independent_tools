@@ -3,9 +3,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlType;
 
 
 @XmlRootElement(name = "project")
+@XmlType(propOrder = {"id", "name", "description", "created_at", "updated_at", "URL", "type", "actuators", "assumption",
+    "controlledProcess", "controller", "hazards", "loss", "mission", "sensor", "system_goal", "system_safety_constraint",
+    "connection"})
 public class Project {
     private List<Actuator> actuators = new ArrayList<Actuator>();
     private String updated_at;

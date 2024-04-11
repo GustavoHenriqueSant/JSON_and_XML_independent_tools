@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @XmlRootElement(name = "safety_constraint")
+@XmlType(propOrder = {"id", "unsafe_control_action", "safety_constraint", "type", "context", "controlaction_id",
+    "rule_id", "created_at", "updated_at", "flag", "causal_analysis", "rules_safety_constraints_hazards"})
 public class Safety_constraints {
     private int id;
     private String unsafe_control_action;
@@ -114,8 +116,8 @@ public class Safety_constraints {
         return rules_safety_constraints_hazards_relations;
     }
 
-    @XmlElementWrapper(name = "rules_safety_constraints_relations")
-    @XmlElement(name = "rules_safety_constraints_relation")
+    @XmlElementWrapper(name = "rules_safety_constraints_hazards_relations")
+    @XmlElement(name = "rules_safety_constraints_hazards_relation")
     public void setRules_safety_constraints_hazards(List<Rules_safety_constraints_hazards_relations> rules_safety_constraints_hazards) {
         this.rules_safety_constraints_hazards_relations = rules_safety_constraints_hazards;
     }

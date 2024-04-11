@@ -3,6 +3,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "causal_analysis_")
+@XmlType(propOrder = {"id", "scenario", "associated_causal_factor", "requirement", "role", "rationale", "guideword_id",
+    "safety_constraint_id", "created_at", "updated_at"})
 public class Causal_analysis {
     private int id;
     private String scenario;

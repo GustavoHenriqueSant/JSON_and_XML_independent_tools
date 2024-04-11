@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @XmlRootElement(name = "variable")
+@XmlType(propOrder = {"id", "name", "project_id", "controller_id", "created_at", "updated_at", "state"})
 public class Variable {
     private int id;
     private String name;

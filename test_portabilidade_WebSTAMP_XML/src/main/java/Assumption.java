@@ -3,13 +3,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "assumption")
+@XmlType(propOrder = {"id", "name", "description", "project_id", "created_at", "updated_at"})
 public class Assumption {
     private int id;
     private String name;
     private String description;
     private int project_id;
     private String created_at;
-    private String updated;
+    private String updated_at;
 
     public int getId() {
         return id;
@@ -51,11 +52,11 @@ public class Assumption {
         this.created_at = created_at;
     }
 
-    public String getUpdated() {
-        return updated;
+    public String getUpdated_at() {
+        return this.updated_at;
     }
 
-    public void setUpdated(String updated) {
-        this.updated = updated;
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
     }
 }

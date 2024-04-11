@@ -3,6 +3,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "context_table")
+@XmlType(propOrder = {"id", "controlaction_id", "context", "ca_provided", "ca_not_provided", "wrong_time_order",
+    "ca_too_early", "ca_too_late", "ca_too_soon", "ca_too_long", "created_at", "updated_at"})
 public class ContextTables {
     private int id;
     private int controlaction_id;
